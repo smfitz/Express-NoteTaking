@@ -1,10 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const storage = require("../db/storage");
+const bodyParser = require("body-parser");
+
+router.use(bodyParser.json());
 
 // Router to delete notes from stoarge
 
-router.delete("/notes/:id", (req, res) => {
+router.delete("./notes/:id", (req, res) => {
   storage
     .deleteNote(req.params.id)
     .then(() => res.json({ ok: true }))

@@ -1,6 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
+const bodyParser = require("body-parser");
+
+
+router.use(bodyParser.json());
+
 
 // Router to serve the new note to the Notes.html file
 
